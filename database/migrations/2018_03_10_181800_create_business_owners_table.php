@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCachierProductsTable extends Migration
+class CreateBusinessOwnersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCachierProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cachier__products', function (Blueprint $table) {
+        Schema::create('business_owners', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateCachierProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cachier__products');
+        Schema::dropIfExists('business_owners');
     }
 }

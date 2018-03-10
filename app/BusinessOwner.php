@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BussinessOwner extends Model
+class BusinessOwner extends Model
 {
     //
 }
