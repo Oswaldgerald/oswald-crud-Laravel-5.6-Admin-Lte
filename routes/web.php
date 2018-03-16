@@ -22,3 +22,4 @@ Route::resource('products','ProductController');
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
