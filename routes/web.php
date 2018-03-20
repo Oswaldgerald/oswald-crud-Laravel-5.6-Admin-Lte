@@ -23,3 +23,21 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+
+Route::get('admin','MainController@getAdmin');
+Route::get('pages/admin','MainController@addAdminIndex');
+Route::post('pages/admin','MainController@addAdmin');
+
+
+
+//Route::get('profile', function () {
+//    return view('pages.profile');
+//});
+//
+//Route::get('profile', function () {
+//    return view('pages.profile');
+//});
+//
+//Route::get('profile', function () {
+//    return view('pages.profile');
+//});
