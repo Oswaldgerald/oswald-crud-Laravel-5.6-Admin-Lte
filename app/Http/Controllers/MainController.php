@@ -103,6 +103,38 @@ class MainController extends Controller
         return view('pages.add_admin');
     }
 
+    public function addBusinessOwnerIndex()
+    {
+        return view('pages.add_business_owner');
+    }
+
+
+    public function BusinessOwnerIndex()
+    {
+        return view('pages.view_business_owner');
+    }
+
+
+    public function addCashierIndex()
+    {
+        return view('pages.add_cashier');
+    }
+    public function CashierIndex()
+    {
+        return view('pages.view_cashier');
+    }
+
+
+    public function addStoreManagerIndex()
+    {
+        return view('pages.add_store_manager');
+    }
+    public function StoreManagerIndex()
+    {
+        return view('pages.view_storemanager');
+    }
+
+
 
     public function addAdmin(Request $req)
     {
@@ -120,7 +152,7 @@ class MainController extends Controller
         $admin->password = bcrypt(Input::get('password'));
         $admin->middlename = $req->middlename;
         $admin->lastname = $req->lastname;
-//        $admin->college_id = "";
+
 //        $admin->type = 'admin';
         $admin->save();
         return redirect('pages/admin')->with('message', 'Administrator Added Successfully!');
@@ -132,4 +164,90 @@ class MainController extends Controller
         return view('pages.view_admin', compact('admin'));
     }
 
+    public function addBusinessOwner(Request $req)
+    {
+        //validation
+            $this->validate($req, array(
+                'name' => 'required',
+                'lastname' => 'required',
+                'email' => 'required|max:255|unique:users',
+                'password' => 'required',
+
+        ));
+          $businessowner = new User();
+          $businessowner->name = $req->name;
+          $businessowner->email = $req->email;
+          $businessowner->remember_token = '';
+          $businessowner->password = bcrypt(Input::get('password'));
+          $businessowner->middlename = $req->middlename;
+          $businessowner->lastname = $req->lastname;
+//
+          $businessowner->save();
+        return redirect('/addbusinessowner')->with('message', 'businessowner Added Successfully!');
+    }
+
+
+    public function getBusinessOwner()
+    {
+        $businessowner = User::all();
+        return view('pages.view_business_owner', compact('businessowner'));
+    }
+
+//    new
+    public function addCashier(Request $req)
+    {
+        //validation
+        $this->validate($req, array(
+            'name' => 'required',
+            'lastname' => 'required',
+            'email' => 'required|max:255|unique:users',
+            'password' => 'required',
+
+        ));
+        $cashier = new User();
+        $cashier->name = $req->name;
+        $cashier->email = $req->email;
+        $cashier->remember_token = '';
+        $cashier->password = bcrypt(Input::get('password'));
+        $cashier->middlename = $req->middlename;
+        $cashier->lastname = $req->lastname;
+
+        $cashier->save();
+        return redirect('/addcashier')->with('message', 'cashier Added Successfully!');
+    }
+
+    public function getCashier()
+    {
+        $cashier = User::all();
+        return view('pages.view_cashier', compact('cashier'));
+    }
+
+   //new manager
+    public function addStoreManager(Request $req)
+    {
+        //validation
+        $this->validate($req, array(
+            'name' => 'required',
+            'lastname' => 'required',
+            'email' => 'required|max:255|unique:users',
+            'password' => 'required',
+
+        ));
+        $storemanager = new User();
+        $storemanager->name = $req->name;
+        $storemanager->email = $req->email;
+        $storemanager->remember_token = '';
+        $storemanager->password = bcrypt(Input::get('password'));
+        $storemanager->middlename = $req->middlename;
+        $storemanager->lastname = $req->lastname;
+
+        $storemanager->save();
+        return redirect('/addstoremanager')->with('message', 'storemanager Added Successfully!');
+    }
+
+    public function getStoreManager()
+    {
+        $storemanager = User::all();
+        return view('pages.view_storemanager', compact('storemanager'));
+    }
 }

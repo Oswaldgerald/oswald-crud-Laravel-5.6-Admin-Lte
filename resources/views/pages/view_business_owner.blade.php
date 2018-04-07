@@ -1,8 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-
-    <!-- Main content -->
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
@@ -14,9 +12,9 @@
                 @endif
                 <div class="box">
                     <div class="box-header box-header-title">
-                        <h3 class="box-title">LIST OF ADMINISTRATORS</h3>
-                        <a href="{{ url('/pages/admin') }}" class="btn btn-default pull-right"><i
-                                    class="fa fa-plus-square"></i> ADD ADMIN</a>
+                        <h3 class="box-title">LIST OF BUSINESS OWNERS</h3>
+                        <a href="{{ url('/addbusinessowner') }}" class="btn btn-default pull-right"><i
+                                    class="fa fa-plus-square"></i> ADD OWNER</a>
                     </div>
                     <div class="box-body">
                         <table id="example1" class="table table-bordered table-striped">
@@ -29,19 +27,18 @@
                                 <th>ACTION</th>
                             </tr>
                             </thead>
-                            @foreach($admin as $administrator)
+                            @foreach($businessowner as $mainowner)
                                 <tbody>
                                 <tr>
-                                    <td>{{ $administrator->email }}</td>
-                                    <td>{{ $administrator->name }}</td>
-                                    <td>{{ $administrator->middlename }}</td>
-                                    <td>{{ $administrator->lastname }}</td>
+                                    <td>{{ $mainowner->email }}</td>
+                                    <td>{{ $mainowner->name }}</td>
+                                    <td>{{ $mainowner->middlename }}</td>
+                                    <td>{{ $mainowner->lastname }}</td>
                                     <td>
-                                        <a href="/edit/admins/{{ $administrator->id }}"
-                                           class="btn btn-primary btn-flat">EDIT</a>
-                                        <a href="/list/admins/delete/{{ $administrator->id }}"
+                                        <a href="/edit/Owner/{{ $mainowner->id }}" class="btn btn-primary btn-flat">EDIT</a>
+                                        <a href="/list/Owner/delete/{{ $mainowner->id }}"
                                            class="btn btn-danger btn-flat"
-                                           onClick="return confirm('Are you sure you want to delete this Admin?')">DELETE</a>
+                                           onClick="return confirm('Are you sure you want to delete this BusinessOwner?')">DELETE</a>
                                     </td>
                                 </tr>
                                 </tbody>

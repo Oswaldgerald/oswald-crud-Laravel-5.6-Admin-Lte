@@ -19,10 +19,10 @@
                     </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i>Bussines Owner</a></li>
+                            <li><a href="{{url('/businessowner')}}"><i class="fa fa-circle-o"></i>Bussines Owner</a></li>
                             <li><a href="#"><i class="fa fa-circle-o"></i> Customer</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Cashier</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Store Manager</a></li>
+                            <li><a href="{{url('/cashier')}}"><i class="fa fa-circle-o"></i> Cashier</a></li>
+                            <li><a href="{{url('/storemanager')}}"><i class="fa fa-circle-o"></i> Store Manager</a></li>
                             <li><a href="{{url('/admin')}}"><i class="fa fa-circle-o"></i> Administrator</a></li>
                             <li><a href="#"><i class="fa fa-circle-o"></i> Other User</a></li>
                         </ul>

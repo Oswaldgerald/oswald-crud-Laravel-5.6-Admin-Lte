@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
 
     <div class="content-wrapper">
@@ -8,7 +7,7 @@
             @include('pages.heading')
             <ol class="breadcrumb" align="center">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">add Business Owner</li>
+                <li class="active">add store manager</li>
             </ol>
         </section>
         <!-- Main content -->
@@ -24,7 +23,7 @@
                 <div class="row">
                     <div class="box box-info">
                         <div class="box-header with-border">
-                            <h3 class="box-title">ADD OWNER</h3>
+                            <h3 class="box-title">ADD STORE MANAGER</h3>
                         </div>
                         <form class="form-horizontal" action="" method="post" data-parsley-validate>
                             <div class="box-body">
@@ -103,4 +102,7 @@
             </div>
         </section>
     </div>
+
+
+
 @endsection

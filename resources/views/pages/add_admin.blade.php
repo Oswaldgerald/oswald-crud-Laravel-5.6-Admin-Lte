@@ -12,9 +12,9 @@
             </ol>
         </section>
         <!-- Main content -->
-          <section class="content">
+        <section class="content">
             <!-- right column -->
-             <div class="col-md-10 col-md-offset-1">
+            <div class="col-md-10 col-md-offset-1">
                 @if(session()->has('message'))
                     <div class="alert alert-success alert-dismissable">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -22,13 +22,10 @@
                     </div>
                 @endif
                 <div class="row">
-                    <!-- Horizontal Form -->
                     <div class="box box-info">
                         <div class="box-header with-border">
                             <h3 class="box-title">ADD ADMIN</h3>
                         </div>
-                        <!-- /.box-header -->
-                        <!-- form start -->
                         <form class="form-horizontal" action="" method="post" data-parsley-validate>
                             <div class="box-body">
                                 {{ csrf_field() }}
@@ -90,32 +87,23 @@
                                                name="password" placeholder="Enter Password">
                                         @if ($errors->has('password'))
                                             <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                                              <strong>{{ $errors->first('password') }}</strong>
+                                             </span>
                                         @endif
                                     </div>
                                 </div>
                             </div>
-                            <!-- /.box-body -->
                             <div class="box-footer">
                                 <button type="reset" class="btn btn-default">Clear</button>
                                 <button type="submit" name="submit" class="btn btn-info pull-right">Save</button>
                             </div>
-                            <!-- /.box-footer -->
                         </form>
                     </div>
-                    <!-- /.box -->
-                    <!-- general form elements disabled -->
-
-                    <!-- /.box -->
                 </div>
-                <!--/.col (right) -->
             </div>
-            <!-- /.row -->
         </section>
-        <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
+
 
 
 @endsection
