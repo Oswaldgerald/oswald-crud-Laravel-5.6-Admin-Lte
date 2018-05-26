@@ -5,7 +5,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             @include('pages.heading')
-            <ol class="breadcrumb" align="center">
+            <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li class="active">add cashiers</li>
             </ol>
@@ -26,7 +26,7 @@
                             <h3 class="box-title">ADD CASHIER</h3>
                         </div>
                         <form class="form-horizontal" action="" method="post" data-parsley-validate>
-                            <div class="box-body">
+                            <div class="box-body" >
                                 {{ csrf_field() }}
                                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                     <label for="name" class="col-sm-2 control-label">First Name</label>
